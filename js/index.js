@@ -4,7 +4,7 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
 
 var onInitFs = function(fs) {
 
-  	fs.root.getFile('log.txt', {create: true, exclusive: true}, function(fileEntry) {
+  	fs.root.getFile('log.txt', {create: true}, function(fileEntry) {
 	    fileEntry.createWriter(function(fileWriter) {
 	      	var blob = new Blob(['Lorem Ipsum'], {type: 'text/plain'});
 
