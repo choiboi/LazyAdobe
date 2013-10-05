@@ -42,5 +42,4 @@ var errorHandler = function(e) {
   };
 
   alert('Error: ' + msg);
-
 };
