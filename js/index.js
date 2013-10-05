@@ -5,12 +5,6 @@ var TaskList = function() {
     this.openfile = "OPEN_FILE";
     this.save = "SAVE";
     this.saveAs = "SAVE_AS";
-
-    this.setupDoc = function() {
-        if (this.tasks.length === 0) {
-            window.scriptCreator.openFile(false, null);
-        }
-    };
 };
 
 TaskList.prototype.openF = function() {
@@ -18,12 +12,10 @@ TaskList.prototype.openF = function() {
 };
 
 TaskList.prototype.saveF = function() {
-    this.setupDoc();
     this.tasks.push(this.save);
 };
 
 TaskList.prototype.saveAsF = function() {
-    this.setupDoc();
     this.tasks.push(this.saveAs);
 };
 
@@ -75,7 +67,7 @@ $('#createScriptButton').on('click', function() {
     if (window.task.isTaskEmpty()) {
         // Add appropriate model to display info.
     } else {
-        if (!window.task.isFirstTaskOpenFile) {
+        if (!window.task.isFirstTaskOpenFile()) {
             window.scriptCreator.openFile(false, null);
         }
     	var blob =  new Blob([window.scriptCreator.getScript()], {type: 'text/plain'});;
