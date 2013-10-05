@@ -1,30 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>App | LazyAdobe</title>
-        <!--
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjA_IXJJ08mJrxGYcfZXFY-DGXoSISmKI&sensor=false"></script>
-        <script>
-            window.jQuery || document.write('<script src="js-framework/jquery-1.10.2.min.js"><\/script>')
-        </script>-->
-        <script type="text/javascript" src="js-framework/jquery-1.10.2.min.js" ></script>
-        <script type="text/javascript" src="js-framework/bootstrap.js" ></script>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"></script>
-    </head>
+    <title>App | LazyAdobe</title>
+    <!--
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjA_IXJJ08mJrxGYcfZXFY-DGXoSISmKI&sensor=false"></script>
+    <script>
+        window.jQuery || document.write('<script src="js-framework/jquery-1.10.2.min.js"><\/script>')
+    </script>-->
+    <script type="text/javascript" src="js-framework/jquery-1.10.2.min.js" ></script>
+    <script type="text/javascript" src="js-framework/bootstrap.js" ></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"></script>
+  </head>
 
-    <body>
-        <h1>Hello, World!!</h1>
-
-        <button id="writeToFile">Write to File</button>
-
-        <a href="app.html">Click ME BITCH</a>
-
-        <footer>
-          <script type="text/javascript" src="js-framework/FileSaver.js"></script>
-          <script type="text/javascript" src="js/adobeScriptCreator.js"></script>
-          <script type="text/javascript" src="js/index.js"></script>
-        </footer>
-    </body>
+  <body>
+      
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+    </nav>
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg btn-primary">Save</a>
+          </div>
+          <div class="col-xs-12 col-md-8 action-list">
+            action-list
+          </div> 
+      </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+    <footer>
+      <script type="text/javascript" src="js-framework/FileSaver.js"></script>
+      <script type="text/javascript" src="js/adobeScriptCreator.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </footer>
+  </body>
 </html>
