@@ -15,6 +15,15 @@ ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 	}
 };
 
+ScriptGenerator.prototype.saveFile = function(newFilename, filepath, saveOptions) {
+
+    if (newFilename) {
+        this.script += this.standardDocVarName + ".saveAs(File('" + filepath + "'));\n";
+    } else {
+        this.script += this.standardDocVarName + ".save();\n";
+    }
+};
+
 ScriptGenerator.prototype.resizeImage = function(width, height) {
 	this.script += this.standardDocVarName + ".resizeImage(" + width + ", " + height + ");\n";
 };
