@@ -2,15 +2,22 @@
 var TaskList = function() {
     this.tasks = new Array();
 
-    this.openfile = "openFile";
+    this.openfile = "OPEN_FILE";
     this.save = "SAVE";
     this.saveAs = "SAVE_AS";
 };
 
+TaskList.prototype.openF = function() {
+    this.tasks.push(this.openFile);
+}
+
 TaskList.prototype.saveF = function() {
     this.tasks.push(this.save);
-    alert(this.tasks);
 };
+
+TaskList.prototype.saveAsF = function() {
+    this.tasks.push(this.saveAs);
+}
 
 window.task = new TaskList();
 
