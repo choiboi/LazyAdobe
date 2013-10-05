@@ -4,12 +4,13 @@ window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFile
 
 var onInitFs = function(fs) {
 
-  	fs.root.getFile('log.txt', {create: true, exclusive: true}, function(fileEntry) {
+  	fs.root.getFile('log.txt', {create: true, exclusive: false}, function(fileEntry) {
 	    fileEntry.createWriter(function(fileWriter) {
 	      	var blob = new Blob(['Lorem Ipsum'], {type: 'text/plain'});
 
 	      	fileWriter.write(blob);
   		});
+  		alert("url:" + fileEntry.toURL());
   	}, errorHandler);
 };
 
@@ -41,6 +42,6 @@ var errorHandler = function(e) {
       break;
   };
 
-  alert('Error: ' + msg);
+  	alert('Error: ' + msg);
 
 };
