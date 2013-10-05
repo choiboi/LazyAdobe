@@ -6,7 +6,6 @@ var ScriptGenerator = function() {
 };
 
 ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
-
 	if (willOpen) {
 		this.script += "var" + this.standardDocVarName + " = open(File(" + filePath + "));\n"
 	} else {
@@ -16,7 +15,6 @@ ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 };
 
 ScriptGenerator.prototype.saveFile = function(newFilename, filepath, saveOptions) {
-
     if (newFilename) {
         this.script += this.standardDocVarName + ".saveAs(File('" + filepath + "'));\n";
     } else {
@@ -30,6 +28,14 @@ ScriptGenerator.prototype.resizeImage = function(width, height) {
 
 ScriptGenerator.prototype.resizeCanvas = function(width, height) {
 	this.script += this.standardDocVarName + ".resizeCanvas(" + width + ", " + height + ");\n";
+};
+
+ScriptGenerator.prototype.hideLayer = function(layer) {
+
+};
+
+ScriptGenerator.prototype.showLayer = function(layer) {
+
 };
 
 ScriptGenerator.prototype.getScript = function() {

@@ -18,6 +18,17 @@ var setupPNGOptions = function() {
     return pngOpts;
 };
 
+var setupPSOptions = function() {
+    var psOpts = new PhotoshopSaveOptions();
+    psOpts.alphaChannels = true;
+    psOpts.annotations = true;
+    psOpts.embedColorProfile = true;
+    psOpts.layers = true;
+    psOpts.spotColors = true;
+
+    return psOpts;
+}
+
 // Saves to file and allows users to save it onto their local machine.
 $('#writeToFile').on('click', function() {
 	window.scriptCreator.openFile(false, null);
