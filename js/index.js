@@ -10,12 +10,13 @@ var onInitFs = function(fs) {
 
 	      	fileWriter.write(blob);
   		});
-  		alert("url:" + fileEntry.toURL());
   	}, errorHandler);
 };
 
 $('#writeToFile').on('click', function() {
-	window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+	// window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+	var blob = new Blob(['Lorem Ipsum'], {type: 'text/plain'});
+saveAs(blob, "document.txt");
 });
 
 var errorHandler = function(e) {
