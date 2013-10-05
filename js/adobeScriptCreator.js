@@ -8,14 +8,22 @@ var ScriptGenerator = function() {
 ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 
 	if (willOpen) {
-		this.script += "var" + this.standardDocVarName + " = open(File(" + filePath + "));"
+		this.script += "var" + this.standardDocVarName + " = open(File(" + filePath + "));\n"
 	} else {
 		this.script += "if (documents.length == 0) {\n alert('There are no documents open.');\n} else {\n var "
-				 + this.standardDocVarName + " = activeDocument;\n}"
+				 + this.standardDocVarName + " = activeDocument;\n}\n"
 	}
 };
 
-ScriptGenerator.prototype.getScriptBlob = function() {
+ScriptGenerator.prototype.resizeImage = function(width, height) {
+	this.script += this.standardDocVarName + ".resizeImage(" + width + ", " + height + ");\n";
+};
+
+ScriptGenerator.prototype.resizeCanvas = function(width, height) {
+	this.script += this.standardDocVarName + ".resizeCanvas(" + width + ", " + height + ");\n";
+};
+
+ScriptGenerator.prototype.getScript = function() {
 	alert(this.script);
 	var s = this.script;
 	this.script = "";
