@@ -9,8 +9,8 @@ ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 	if (willOpen) {
 		this.script += "var" + this.standardDocVarName + " = open(File(" + filePath + "));\n"
 	} else {
-		this.script += "if (documents.length == 0) {\n alert('There are no documents open.');\n} else {\n var "
-				 + this.standardDocVarName + " = activeDocument;\n}\n"
+		this.script = "if (documents.length == 0) {\n alert('There are no documents open.');\n} else {\n var "
+				 + this.standardDocVarName + " = activeDocument;\n}\n" + this.script;
 	}
 };
 
@@ -39,7 +39,7 @@ ScriptGenerator.prototype.showLayer = function(layer) {
 };
 
 ScriptGenerator.prototype.getScript = function() {
-	alert(this.script);
+    alert(this.script);
 	var s = this.script;
 	this.script = "";
 	return s;

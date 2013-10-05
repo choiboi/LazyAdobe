@@ -5,19 +5,35 @@ var TaskList = function() {
     this.openfile = "OPEN_FILE";
     this.save = "SAVE";
     this.saveAs = "SAVE_AS";
+
+    this.setupDoc = function() {
+        if (this.tasks.length === 0) {
+            window.scriptCreator.openFile(false, null);
+        }
+    };
 };
 
 TaskList.prototype.openF = function() {
     this.tasks.push(this.openFile);
-}
+};
 
 TaskList.prototype.saveF = function() {
+    this.setupDoc();
     this.tasks.push(this.save);
 };
 
 TaskList.prototype.saveAsF = function() {
+    this.setupDoc();
     this.tasks.push(this.saveAs);
-}
+};
+
+TaskList.prototype.isTaskEmpty = function() {
+    return this.tasks.length === 0;
+};
+
+TaskList.prototype.isFirstTaskOpenFile = function() {
+    return this.tasks[0] === this.openfile;
+};
 
 window.task = new TaskList();
 
@@ -50,16 +66,19 @@ var setupPSOptions = function() {
 }
 
 $('#saveButton').on('click', function() {
-    window.scriptCreator.saveFile(false, null);
     window.task.saveF();
+    window.scriptCreator.saveFile(false, null);
 });
 
 // Saves to file and allows users to save it onto their local machine.
-$('#writeToFile').on('click', function() {
-	window.scriptCreator.openFile(false, null);
-	window.scriptCreator.resizeImage(100, 300);
-	window.scriptCreator.resizeCanvas(500, 500);
-    window.scriptCreator.saveFile(true, "~/Desktop/test.jpg");
-	var blob =  new Blob([window.scriptCreator.getScript()], {type: 'text/plain'});;
-	saveAs(blob, "document.jsx");
+$('#createScriptButton').on('click', function() {
+    if (window.task.isTaskEmpty()) {
+        // Add appropriate model to display info.
+    } else {
+        if (!window.task.isFirstTaskOpenFile) {
+            window.scriptCreator.openFile(false, null);
+        }
+    	var blob =  new Blob([window.scriptCreator.getScript()], {type: 'text/plain'});;
+    	saveAs(blob, "document.jsx");
+    }
 });
