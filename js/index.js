@@ -1,5 +1,18 @@
-// Start here.x
+// Start here.
+var TaskList = function() {
+    this.tasks = new Array();
 
+    this.openfile = "openFile";
+    this.save = "SAVE";
+    this.saveAs = "SAVE_AS";
+};
+
+TaskList.prototype.saveF = function() {
+    this.tasks.push(this.save);
+    alert(this.tasks);
+};
+
+window.task = new TaskList();
 
 var setupJPEGOptions = function() {
     var jpgOpts = new JPEGSaveOptions();
@@ -28,6 +41,11 @@ var setupPSOptions = function() {
 
     return psOpts;
 }
+
+$('#saveButton').on('click', function() {
+    window.scriptCreator.saveFile(false, null);
+    window.task.saveF();
+});
 
 // Saves to file and allows users to save it onto their local machine.
 $('#writeToFile').on('click', function() {
