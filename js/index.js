@@ -1,6 +1,8 @@
-// Start here.
+// Start here.x
 
+
+// Saves to file and allows users to save it onto their local machine.
 $('#writeToFile').on('click', function() {
-	var blob = new Blob(["if (documents.length == 0) { alert('There are no documents open.'); var flowerDoc = open(File('~/Desktop/test/test_image.png'))}"], {type: 'text/plain'});
+	var blob = new Blob([], {type: 'text/plain'});
 	saveAs(blob, "document.jsx");
 });
