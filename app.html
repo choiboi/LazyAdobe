@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js-framework/jquery-1.10.2.min.js" ></script>
     <script type="text/javascript" src="js-framework/bootstrap.js" ></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"></script>
+    <link rel="stylesheet" type="text/css" href="css/docs.css"></script>
   </head>
 
   <body>
@@ -30,26 +31,51 @@
     </nav>
     <div class="container bs-docs-container">
       <div class="row">
-          <div class="col-xs-6 col-md-4">
-            <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg btn-primary">Save</a>
+          <div class="col-xs-6 col-md-3">
+            <div class="bs-sidebar hidden-print affix">
+              <ul class="nav bs-sidenav ">
+                <li>
+                  <a data-toggle="modal" href="#saveModal">Save</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="col-xs-12 col-md-8 action-list">
+          <div class="col-xs-12 col-md-9 action-list">
             action-list
           </div> 
       </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Modal title</h4>
+              <h4 class="modal-title">Save File</h4>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="input-group">
+                    <span class="input-group-addon">Choose File</span>
+                    <input type="text" class="form-control" placeholder="File Path">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- Large button group -->
+                  <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                      Large button <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      ...
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary">Add Task</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
