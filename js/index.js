@@ -18,6 +18,7 @@ $('#writeToFile').on('click', function() {
 });
 
 var errorHandler = function(e) {
+
 	var msg = '';
 
   switch (e.code) {
