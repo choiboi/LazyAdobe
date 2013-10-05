@@ -1,4 +1,4 @@
 LazyAdobe
 =========
 
-Adobe Script Generator that will automate your Photoshop task without having to write up the script.
+Adobe Script Generator that will automate your Photoshop tasks without having to write up the script.
