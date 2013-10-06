@@ -45,6 +45,7 @@ $('#previewScriptButton').on('click', function() {
     if($(this).hasClass('active')){
         // Closing.
         $(this).removeClass('active');
+        window.scriptCreator.removeScript();
     } else {
         // Opening.
         $(this).addClass('active');
