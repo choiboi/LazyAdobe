@@ -5,27 +5,31 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="input-group">
-        <!-- <span class="input-group-addon">Choose File</span> -->
-        <input type="file" class="form-control" placeholder="File Path">
-      </div>
+       <span class="input-group-addon">Folder Name</span>
+        <input id="folderName" type="text" class="form-control" placeholder="optional">
+     </div>
+     <div class="input-group">
+       <span class="input-group-addon">File Name</span>
+        <input id="fileName" type="text" class="form-control" placeholder="required">
+     </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="btn-group">
-        <button type="button" class="btn btn-default">JPG</button>
-        <button type="button" class="btn btn-default">PNG</button>
-        <button type="button" class="btn btn-default">PSD</button>
+        <button id="JPG" type="button" class="btn btn-default">JPG</button>
+        <button id="PNG" type="button" class="btn btn-default">PNG</button>
+        <button id="PSD" type="button" class="btn btn-default">PSD</button>
       </div>
 
     </div>
   </div>
   <div class="row">
-    <div class="input-group" style="display:none">
+    <div class="input-group" id="quality" style="display:none">
       <span class="input-group-addon">Quality</span>
       <input id="resizeWidth" type="text" class="form-control" placeholder="number">
     </div>
-    <div class="radio" style="display:none">
+    <div class="radio" id="interlaced" style="display:none">
       <label>
         <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
         Option one is this and that&mdash;be sure to include why it's great
@@ -39,6 +43,22 @@
 </div>
 </div><!-- /.modal-content -->
 <script>
+var ext = "JPG"
+$('#JPG').click(){function(){
+  ext = "JPG";
+  $('#quality').show();
+  $('#interlaced').hide();
+});
+$('#PNG').click(){function(){
+  ext = "PNG";
+  $('#interlaced').show();
+  $('#quality').hide();
+});
+$('#PSD').click(){function(){
+  ext = "PSD";
+    $('#quality').hide();
+  $('#interlaced').hide();
+});
 $('#taskSaveAs').on('click', function() {
     //data validity check
         //checks
@@ -50,13 +70,13 @@ $('#taskSaveAs').on('click', function() {
     // window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
     tempTask = new Object();
     tempTask.type = "saveAs";
-    tempTask.folder = "folder";
-    tempTask.filename = "filename";
-    tempTask.extension = "JPG";
+    tempTask.folder = $('#folderName').val();
+    tempTask.filename = $('#fileName').val();
+    tempTask.extension = ext;
     if(tempTask.extension == "JPG"){
-      tempTask.quality = "12";
+      tempTask.quality = $('#quality').val();
     } else if(tempTask.extension =="PNG"){
-      tempTask.interlaced = true;
+      tempTask.interlaced = $('#interlaced').val();
     }
     TaskList.push(tempTask);
 });
