@@ -31,7 +31,13 @@
 
 // window.task = new TaskList();
 
+$('#cancelScriptButton').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('#scriptwrapper').fadeOut(100);
+    $('#previewScriptButton').removeClass('active');
 
+});
 $('#saveButton').on('click', function() {
     // window.task.saveF();
     // window.scriptCreator.saveFile(false, null, null, null);
