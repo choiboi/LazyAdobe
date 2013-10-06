@@ -66,7 +66,31 @@
           </div> 
       </div>
 
-      <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="loadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Load File</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="input-group">
+                    <!-- <span class="input-group-addon">Choose File</span> -->
+                    <input type="file" class="form-control" placeholder="File Path">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add Task</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+            <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -77,8 +101,8 @@
               <div class="row">
                 <div class="col-md-9">
                   <div class="input-group">
-                    <span class="input-group-addon">Choose File</span>
-                    <input type="text" class="form-control" placeholder="File Path">
+                    <!-- <span class="input-group-addon">Choose File</span> -->
+                    <input type="file" class="form-control" placeholder="File Path">
                   </div>
                 </div>
                 <div class="col-md-3">
