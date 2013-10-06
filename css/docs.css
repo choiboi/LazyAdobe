@@ -23,6 +23,12 @@
  * Customizer
  * Miscellaneous
  */
+#actionlist{
+  margin-top: 30px;
+}
+#actionlist .alert {
+  margin: 10px 0 0 0 ;
+}
 .divider {
 height: 1px;
 margin: 9px 0;
