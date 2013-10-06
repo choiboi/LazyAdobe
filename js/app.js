@@ -16,7 +16,8 @@ $(function (){
       cache: false
     }).done(function(html){
       console.log(html);
-      $('#myModal').children().children().remove().append(html);
+      $('#myModal').children().children().html().remove();
+      $('#myModal').children().children().append(html);
       $('#myModal').modal('show');
     });
     
