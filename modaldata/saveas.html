@@ -27,3 +27,16 @@
   <button type="button" class="btn btn-primary" id="taskSaveAs">Add Task</button>
 </div>
 </div><!-- /.modal-content -->
+<script>
+$('#taskSaveAs').on('click', function() {
+    alert('save as button');
+    //data validity check
+        //checks
+    //on success
+    $('#myModal').modal('hide');
+    //add to actions list
+    //add to back array
+    window.task.saveAsF();
+    window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
+});
+</script>
