@@ -76,9 +76,9 @@ $('#taskSaveAs').on('click', function() {
     tempTask.filename = $('#fileName').val();
     tempTask.extension = ext;
     if(tempTask.extension == "JPG"){
-      tempTask.quality = $('#quality').val();
+      tempTask.quality = $('#quality input').val();
     } else if(tempTask.extension =="PNG"){
-      tempTask.interlaced = $('#interlaced').val();
+      tempTask.interlaced = $('#interlaced input').val();
     }
     TaskList.push(tempTask);
     refreshActionList();
