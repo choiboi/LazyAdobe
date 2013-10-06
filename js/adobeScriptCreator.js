@@ -26,13 +26,9 @@ var ScriptGenerator = function() {
     };
 };
 
-ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
-	if (willOpen) {
-		this.script += "var" + this.standardDocVarName + " = open(File(" + filePath + "));\n"
-	} else {
-		this.script = "if (documents.length == 0) {\n alert('There are no documents open.');\n} else {\n var "
-				 + this.standardDocVarName + " = activeDocument;\n}\n" + this.script;
-	}
+ScriptGenerator.prototype.openFile = function() {
+	this.script = "if (documents.length == 0) {\n alert('There are no documents open.');\n} else {\n var "
+			+ this.standardDocVarName + " = activeDocument;\n}\n" + this.script;
 };
 
 ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, saveOptions) {

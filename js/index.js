@@ -61,7 +61,7 @@ $('#downloadScriptButton').on('click', function() {
         alert("NO TASKS!!");
     } else {
         if (!window.task.isFirstTaskOpenFile()) {
-            window.scriptCreator.openFile(false, null);
+            window.scriptCreator.openFile();
         }
     	var blob =  new Blob([window.scriptCreator.getScript()], {type: 'text/plain'});;
     	saveAs(blob, "document.jsx");
