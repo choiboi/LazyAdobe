@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <div class="input-group">
        <span class="input-group-addon">Layer Name</span>
-        <input type="text" class="form-control" placeholder="">
+        <input id="layerName" type="text" class="form-control" placeholder="">
      </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ $('#taskShowLayer').on('click', function() {
     //add to back array
     tempTask = new Object();
     tempTask.type = "showLayer";
-    tempTask.layerName = "layer";
+    tempTask.layerName = $('#layerName').val();
     TaskList.push(tempTask);
 });
 </script>
