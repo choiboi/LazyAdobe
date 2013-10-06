@@ -75,21 +75,19 @@ $('#previewScriptButton').on('click', function() {
             }
         }
 
-        var script = window.getScript();
+        var script = window.scriptCreator.getScript();
+        $('#scriptPreviewText').val(script);
         alert(script);
     }
 });
 
 // Saves to file and allows users to save it onto their local machine.
 $('#downloadScriptButton').on('click', function() {
-    if (window.task.isTaskEmpty()) {
+    if (TaskList.length === 0) {
         // Add appropriate model to display info.
         alert("NO TASKS!!");
     } else {
-        if (!window.task.isFirstTaskOpenFile()) {
-            window.scriptCreator.openFile();
-        }
-    	var blob =  new Blob([window.scriptCreator.getScript()], {type: 'text/plain'});;
+    	var blob =  new Blob([$('#scriptPreviewText').val()], {type: 'text/plain'});
     	saveAs(blob, "document.jsx");
     }
 });
