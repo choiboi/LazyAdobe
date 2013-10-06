@@ -79,6 +79,9 @@ $('#taskSaveAs').on('click', function() {
       tempTask.quality = $('#quality input').val();
     } else if(tempTask.extension =="PNG"){
       tempTask.interlaced = $('#interlaced input').val();
+      if (tempTask.interlaced !== "true") {
+        tempTask.interlaced = false;
+      }
     }
     TaskList.push(tempTask);
     refreshActionList();
