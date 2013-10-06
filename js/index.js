@@ -57,6 +57,11 @@ var setupPSOptions = function() {
     return psOpts;
 }
 
+$('#loadFileButton').on('click', function() {
+    alert('load file button');
+    $('#loadFileModal').modal('hide')
+});
+
 $('#saveButton').on('click', function() {
     window.task.saveF();
     window.scriptCreator.saveFile(false, null);
@@ -65,11 +70,16 @@ $('#saveButton').on('click', function() {
 $('#previewScriptButton').on('click', function() {
         $('#scriptwrapper').show();
 });
+$('#saveAsButton').on('click', function() {
+    alert('save as button');
+    $('#saveAsModal').modal('hide')
+});
 
 // Saves to file and allows users to save it onto their local machine.
 $('#downloadScriptButton').on('click', function() {
     if (window.task.isTaskEmpty()) {
         // Add appropriate model to display info.
+        alert("NO TASKS!!");
     } else {
         if (!window.task.isFirstTaskOpenFile()) {
             window.scriptCreator.openFile(false, null);

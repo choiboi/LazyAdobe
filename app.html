@@ -37,13 +37,13 @@
                 <li><h3>Actions</h3></li>
                 <li class="divider"></li>
                 <li>
-                  <a data-toggle="modal" href="#loadModal">Load File</a>
+                  <a data-toggle="modal" href="#loadFileModal">Load File</a>
                 </li>
                 <li>
                   <a id="saveButton">Save</a>
                 </li>
                 <li>
-                  <a data-toggle="modal" href="#saveModal">Save As</a>
+                  <a data-toggle="modal" href="#saveAsModal">Save As</a>
                 </li>
                 <li>
                   <a href="#" > Resize</a>
@@ -73,7 +73,8 @@
           </div> 
       </div>
 
-      <div class="modal fade" id="loadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- Load File Modal -->
+      <div class="modal fade" id="loadFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -92,12 +93,14 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add Task</button>
+              <button type="button" class="btn btn-primary" id="loadFileButton">Add Task</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-            <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <!-- Save As Model -->
+      <div class="modal fade" id="saveAsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -125,7 +128,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add Task</button>
+              <button type="button" class="btn btn-primary" id="saveAsButton">Add Task</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
