@@ -23,7 +23,9 @@
  * Customizer
  * Miscellaneous
  */
-
+.navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+  background-color: #463265;
+}
 #actionlist{
   margin-top: 30px;
 }
@@ -47,6 +49,14 @@ font-weight: normal;
 line-height: 1.428571429;
 color: #333333;
 white-space: nowrap;
+}
+.dropdown-menu >li > .disabled{
+  cursor: not-allowed;
+pointer-events: none;
+opacity: 0.65;
+filter: alpha(opacity=65);
+-webkit-box-shadow: none;
+box-shadow: none;
 }
 .bs-sidebar .nav > li > h3 , .bs-sidebar .nav > li > h4{
 display: block;
