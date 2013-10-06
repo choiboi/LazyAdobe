@@ -64,7 +64,7 @@ $('#loadFileButton').on('click', function() {
 
 $('#saveButton').on('click', function() {
     window.task.saveF();
-    window.scriptCreator.saveFile(false, null);
+    window.scriptCreator.saveFile(false, null, null, null);
 });
 
 $('#previewScriptButton').on('click', function() {
@@ -78,6 +78,8 @@ $('#previewScriptButton').on('click', function() {
 $('#saveAsButton').on('click', function() {
     alert('save as button');
     $('#saveAsModal').modal('hide')
+    window.task.saveAsF();
+    window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
 });
 
 // Saves to file and allows users to save it onto their local machine.

@@ -1,8 +1,17 @@
 // This js will handle creating the PhotoShop script code.
 var ScriptGenerator = function() {
 	this.script = "";
-
 	this.standardDocVarName = "doc";
+    this.jpgOptionsName = "jpgOpts";
+
+    this.checkFolderExistsCode = "";
+
+    this.setupJPEGOptions = function() {
+        var code = "var jpgOpts = new JPEGSaveOptions();\n" + "jpgOpts.embedColorProfile = true;\n";
+        code += "jpgOpts.formatOptions = FormatOptions.STANDARDBASELINE;\n" + "jpgOpts.matte = MatteType.NONE;\n";
+        code += "jpgOpts.quality = 10;\n";
+        return code;
+    };
 };
 
 ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
@@ -14,12 +23,19 @@ ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 	}
 };
 
-ScriptGenerator.prototype.saveFile = function(newFilename, filepath, saveOptions) {
-    if (newFilename) {
-        this.script += this.standardDocVarName + ".saveAs(File('" + filepath + "'));\n";
+ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, saveOptions) {
+    if (saveAs) {
+        // this.script += this.standardDocVarName + ".saveAs(File('" + filepath + "'));\n";
+        this.script += "var p = " + this.standardDocVarName + ".path;\n";
+        this.script += "var myFolder = newFolder(p + " + newFolder + ");\n" +
+                            "myFolder.create();\n";
+        this.script += this.setupJPEGOptions();
+        var newPath = "/" + newFolder + "/" + newFilename;
+        this.script += this.standardDocVarName + ".saveAs(" + newPath + ", " + this.jpgOptionsName + ", true, Extension.LOWERCASE);\n";
     } else {
         this.script += this.standardDocVarName + ".save();\n";
     }
+    alert(this.script);
 };
 
 ScriptGenerator.prototype.resizeImage = function(width, height) {
