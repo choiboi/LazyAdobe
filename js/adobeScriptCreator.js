@@ -72,4 +72,8 @@ ScriptGenerator.prototype.getScriptAndRemove = function() {
     return s;
 }
 
+ScriptGenerator.prototype.removeScript = function() {
+    this.script = "";
+}
+
 window.scriptCreator = new ScriptGenerator();
