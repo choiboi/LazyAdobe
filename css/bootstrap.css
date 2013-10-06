@@ -5037,7 +5037,7 @@ button.close {
 body.modal-open,
 .modal-open .navbar-fixed-top,
 .modal-open .navbar-fixed-bottom {
-  margin-right: 15px;
+  //margin-right: 15px;
 }
 .modal {
   display: none;
@@ -5095,7 +5095,7 @@ body.modal-open,
   opacity: 0;
   filter: alpha(opacity=0);
 }
-.modal-backdrop.in {
+.modal-backdrop.fade.in {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }

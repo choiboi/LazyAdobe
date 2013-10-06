@@ -38,21 +38,6 @@ padding: 5px 20px;
   width: 150px;
   display: inline;
 }
-#scriptwrapper{
-  display:none;
-  position: absolute;
-  width: 100%;
-  top: 60px;
-  padding-right: 30px;
-}
-#scriptwrapper .inner{
-  width: 100%;
-  position:relative;
-  padding: 15px;
-  background-color: #428bca;
-}
-#scriptwrapper textarea{
-}
 /*
  * Scaffolding
  *

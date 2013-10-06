@@ -62,8 +62,12 @@ $('#saveButton').on('click', function() {
     window.scriptCreator.saveFile(false, null);
 });
 
+$('#previewScriptButton').on('click', function() {
+        $('#scriptwrapper').show();
+});
+
 // Saves to file and allows users to save it onto their local machine.
-$('#createScriptButton').on('click', function() {
+$('#downloadScriptButton').on('click', function() {
     if (window.task.isTaskEmpty()) {
         // Add appropriate model to display info.
     } else {
