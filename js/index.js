@@ -30,8 +30,7 @@
 // };
 
 // window.task = new TaskList();
-var TaskList = new Array();
-var tempTask = null;
+
 
 $('#saveButton').on('click', function() {
     // window.task.saveF();

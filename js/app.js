@@ -1,3 +1,6 @@
+//init global variables
+var TaskList = new Array();
+var tempTask = null;
 $(function (){
   $('ul.nav.bs-sidenav > li').click(function(){
     $(this).addClass("active");
