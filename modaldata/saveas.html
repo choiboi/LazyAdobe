@@ -26,17 +26,17 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-    <div class="input-group" id="quality" style="display:none">
-      <span class="input-group-addon">Quality</span>
-      <input id="resizeWidth" type="text" class="form-control" placeholder="number">
+      <div class="input-group" id="quality" style="display:none">
+        <span class="input-group-addon">Quality</span>
+        <input id="resizeWidth" type="text" class="form-control" placeholder="number">
+      </div>
+      <div class="radio" id="interlaced" style="display:none">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+          Interlaced
+        </label>
+      </div>
     </div>
-    <div class="radio" id="interlaced" style="display:none">
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-        Interlaced
-      </label>
-    </div>
-    <div class="col-md-12">
   </div>
 </div>
 <div class="modal-footer">
@@ -81,5 +81,6 @@ $('#taskSaveAs').on('click', function() {
       tempTask.interlaced = $('#interlaced').val();
     }
     TaskList.push(tempTask);
+    refreshActionList();
 });
 </script>
