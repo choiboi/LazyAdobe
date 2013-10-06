@@ -53,12 +53,14 @@ ScriptGenerator.prototype.resizeCanvas = function(width, height) {
 	this.script += this.standardDocVarName + ".resizeCanvas(" + width + ", " + height + ");\n";
 };
 
-ScriptGenerator.prototype.hideLayer = function(layer) {
-
+ScriptGenerator.prototype.hideLayer = function(layerName) {
+    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName(" + layerName + ");\n";
+    this.script += "l.visible = false;\n";
 };
 
-ScriptGenerator.prototype.showLayer = function(layer) {
-
+ScriptGenerator.prototype.showLayer = function(layerName) {
+    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName(" + layerName + ");\n";
+    this.script += "l.visible = true;\n";
 };
 
 ScriptGenerator.prototype.getScript = function() {
