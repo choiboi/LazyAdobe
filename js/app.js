@@ -15,6 +15,7 @@ $this = $(this);
       url: "modaldata/" + loadTarget +".html",
       cache: false
     }).done(function(html){
+      console.log(html);
       $('#myModal').children('.modal-content').append(html);
       $('#myModal').modal('show');
     });
