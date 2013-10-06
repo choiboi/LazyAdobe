@@ -70,10 +70,15 @@ $('#previewScriptButton').on('click', function() {
                 window.scriptCreator.resizeCanvas(temp.width, temp.height);
             } else if (temp.type === "resizeImage") {
                 window.scriptCreator.resizeImage(temp.width, temp.height);
+            } else if (temp.type === "hideLayer") {
+                window.scriptCreator.hideLayer(temp.layerName);
+            } else if (temp.type === "showLayer") {
+                window.scriptCreator.showLayer(temp.layerName);
             }
         }
 
         var script = window.getScript();
+        alert(script);
     }
 });
 

@@ -64,7 +64,6 @@ ScriptGenerator.prototype.showLayer = function(layerName) {
 };
 
 ScriptGenerator.prototype.getScript = function() {
-    alert(this.script);
 	var s = this.script;
 	this.script = "";
 	return s;
