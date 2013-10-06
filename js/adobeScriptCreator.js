@@ -25,7 +25,6 @@ ScriptGenerator.prototype.openFile = function(willOpen, filePath) {
 
 ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, saveOptions) {
     if (saveAs) {
-        // this.script += this.standardDocVarName + ".saveAs(File('" + filepath + "'));\n";
         this.script += "var p = " + this.standardDocVarName + ".path;\n";
         this.script += "var myFolder = newFolder(p + " + newFolder + ");\n" +
                             "myFolder.create();\n";
