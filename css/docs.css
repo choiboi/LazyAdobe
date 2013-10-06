@@ -83,6 +83,10 @@ border-color: #269abc;
 #scriptwrapper .inner_foot a{
   margin: 0 0 0 15px;
 }
+.modal .input-group{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 /*
  * Scaffolding
  *
