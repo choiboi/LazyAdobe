@@ -68,7 +68,12 @@ $('#saveButton').on('click', function() {
 });
 
 $('#previewScriptButton').on('click', function() {
-        $('#scriptwrapper').show();
+    $('#scriptwrapper').fadeToggle(100);
+    if($(this).hasClass('active')){
+        $(this).removeClass('active');
+    }else{
+        $(this).addClass('active');
+    }
 });
 $('#saveAsButton').on('click', function() {
     alert('save as button');
