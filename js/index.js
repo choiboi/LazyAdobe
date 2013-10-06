@@ -86,7 +86,7 @@ $('#downloadScriptButton').on('click', function() {
         // Add appropriate model to display info.
         alert("NO TASKS!!");
     } else {
-    	var blob =  new Blob([$('#scriptPreviewText').val()], {type: 'text/plain'});
+    	var blob =  new Blob([window.scriptCreator.getScriptAndRemove()], {type: 'text/plain'});
     	saveAs(blob, "document.jsx");
     }
 });
