@@ -5,25 +5,6 @@ var ScriptGenerator = function() {
     this.optionsName = "opts";
 
     this.checkFolderExistsCode = "";
-
-    this.setupJPEGOptions = function() {
-        var code = "var opts = new JPEGSaveOptions();\n" + "opts.embedColorProfile = true;\n";
-        code += "opts.formatOptions = FormatOptions.STANDARDBASELINE;\n" + "opts.matte = MatteType.NONE;\n";
-        code += "opts.quality = 10;\n";
-        return code;
-    };
-
-    this.setupPNGOptions = function() {
-        var code = "var opts = new PNGSaveOptions();\n" + "opts.interlaced = true;\n";
-        return code;
-    };
-
-    this.setupPSDOptions = function() {
-        var code = "var opts= new PhotoshopSaveOptions();\n" + "opts.alphaChannels = true;\n";
-        code += "opts.annotations = true;\n" + "opts.embedColorProfile = true;\n";
-        code += "opts.layers = true;\n" + "opts.spotColors = true;\n";
-        return code;
-    };
 };
 
 ScriptGenerator.prototype.openFile = function() {
@@ -36,13 +17,32 @@ ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, sa
         this.script += "var p = " + this.standardDocVarName + ".path;\n";
         this.script += "var myFolder = newFolder(p + " + newFolder + ");\n" +
                             "myFolder.create();\n";
-        this.script += this.setupJPEGOptions();
+        this.script += saveOptions;
         var newPath = "/" + newFolder + "/" + newFilename;
         this.script += this.standardDocVarName + ".saveAs(" + newPath + ", " + this.optionsName + ", true, Extension.LOWERCASE);\n";
     } else {
         this.script += this.standardDocVarName + ".save();\n";
     }
     alert(this.script);
+};
+
+ScriptGenerator.prototype.setupJPEGOptions = function(quality) {
+    var code = "var opts = new JPEGSaveOptions();\n" + "opts.embedColorProfile = true;\n";
+    code += "opts.formatOptions = FormatOptions.STANDARDBASELINE;\n" + "opts.matte = MatteType.NONE;\n";
+    code += "opts.quality = " + quality + ";\n";
+    return code;
+};
+
+ScriptGenerator.prototype.setupPNGOptions = function(interlaced) {
+    var code = "var opts = new PNGSaveOptions();\n" + "opts.interlaced = " + interlaced + ";\n";
+    return code;
+};
+
+ScriptGenerator.prototype.setupPSDOptions = function() {
+    var code = "var opts= new PhotoshopSaveOptions();\n" + "opts.alphaChannels = true;\n";
+    code += "opts.annotations = true;\n" + "opts.embedColorProfile = true;\n";
+    code += "opts.layers = true;\n" + "opts.spotColors = true;\n";
+    return code;
 };
 
 ScriptGenerator.prototype.resizeImage = function(width, height) {
@@ -64,7 +64,6 @@ ScriptGenerator.prototype.showLayer = function(layerName) {
 };
 
 ScriptGenerator.prototype.getScript = function() {
-    alert(this.script);
 	var s = this.script;
 	this.script = "";
 	return s;

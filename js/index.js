@@ -43,9 +43,41 @@ $('#saveButton').on('click', function() {
 $('#previewScriptButton').on('click', function() {
     $('#scriptwrapper').fadeToggle(100);
     if($(this).hasClass('active')){
+        // Closing.
         $(this).removeClass('active');
-    }else{
+    } else {
+        // Opening.
         $(this).addClass('active');
+        // Generate Script.
+        window.scriptCreator.openFile();
+
+        for (int i = 0; i < TaskList.length; i++) {
+            var temp = TaskList[i];
+            if (temp.type === "save") {
+                window.scriptCreator.saveFile(false, null, null, null);
+            } else if (temp.type === "saveAs") {
+                var code = "";
+                if (temp.extension === "JPG") {
+                    code = window.scriptCreator.setupJPEGOptions(temp.quality);
+                } else if (temp.extension === "PNG") {
+                    code = window.scriptCreator.setupPNGOptions(temp.interlaced);
+                } else {
+                    code = window.scriptCreator.setupPSDOptions();
+                }
+                window.scriptCreator.saveFile(true, temp.filename, temp.folder, code);
+            } else if (temp.type === "resizeCanvas") {
+                window.scriptCreator.resizeCanvas(temp.width, temp.height);
+            } else if (temp.type === "resizeImage") {
+                window.scriptCreator.resizeImage(temp.width, temp.height);
+            } else if (temp.type === "hideLayer") {
+                window.scriptCreator.hideLayer(temp.layerName);
+            } else if (temp.type === "showLayer") {
+                window.scriptCreator.showLayer(temp.layerName);
+            }
+        }
+
+        var script = window.getScript();
+        alert(script);
     }
 });
 
