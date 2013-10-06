@@ -8,13 +8,13 @@
     <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon">height</span>
-        <input type="text" class="form-control" placeholder="px">
+        <input id="resizeHeight" type="text" class="form-control" placeholder="px">
       </div>
     </div>
     <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon">width</span>
-        <input type="text" class="form-control" placeholder="px">
+        <input id="resizeHeight" type="text" class="form-control" placeholder="px">
       </div>
     </div>
   </div>
@@ -36,8 +36,8 @@ $('#taskResizeCanvas').on('click', function() {
     // window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
     tempTask = new Object();
     tempTask.type = "resizeCanvas";
-    tempTask.width = "100";
-    tempTask.height = "100";
+    tempTask.width = $('#resizeWidth').val();
+    tempTask.height = $('#resizeHeight').val();
     TaskList.push(tempTask);
 });
 </script>
