@@ -1,29 +1,25 @@
-<div data-modal-id="saveas" class="modal-content">
+<div data-modal-id="resizeImage" class="modal-content">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  <h4 class="modal-title">Save File</h4>
+  <h4 class="modal-title">Resize Image</h4>
 </div>
 <div class="modal-body">
   <div class="row">
     <div class="col-md-6">
       <div class="input-group">
         <!-- <span class="input-group-addon">Choose File</span> -->
-        <input type="file" class="form-control" placeholder="File Path">
+        <input type="text" class="form-control" placeholder="height">
       </div>
     </div>
     <div class="col-md-6">
-        <!-- Large button group -->
-        Choose Format
-      <select class="form-control">
-        <option>JPG</option>
-        <option>PNG</option>
-        <option>PSD</option>
-      </select>
-    </div>
+      <div class="input-group">
+        <!-- <span class="input-group-addon">Choose File</span> -->
+        <input type="text" class="form-control" placeholder="width">
+      </div>
   </div>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-  <button type="button" class="btn btn-primary" id="taskSaveAs">Add Task</button>
+  <button type="button" class="btn btn-primary" id="taskResizeImage">Add Task</button>
 </div>
 </div><!-- /.modal-content -->
