@@ -75,7 +75,7 @@ $('#previewScriptButton').on('click', function() {
             }
         }
 
-        var script = window.getScript();
+        var script = window.scriptCreator.getScript();
         alert(script);
     }
 });
