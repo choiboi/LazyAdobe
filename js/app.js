@@ -6,4 +6,18 @@ $(function (){
   $('.form-control').click(function(){
     console.log("selected");
   });
+  $(".modalBtn").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  	var loadTarget = $(this).data("loadTarget");
+$this = $(this);
+    $.ajax({
+      url: "modaldata/" + loadTarget +".html",
+      cache: false
+    }).done(function(html){
+      $('#myModal').children('.modal-content').append(html);
+      $('#myModal').modal('show');
+    });
+    
+  });
 });

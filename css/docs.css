@@ -29,6 +29,9 @@ margin: 9px 0;
 overflow: hidden;
 background-color: #e5e5e5;
 }
+.bs-docs-container{
+  min-height:800px;
+}
 .dropdown-menu > li > span {
 display: block;
 padding: 3px 20px;
