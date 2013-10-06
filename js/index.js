@@ -5,6 +5,8 @@ var TaskList = function() {
     this.openfile = "OPEN_FILE";
     this.save = "SAVE";
     this.saveAs = "SAVE_AS";
+    this.resize_image = "RESIZE_IMAGE";
+    this.resize_canvas = "RESIZE_CANVAS";
 };
 
 TaskList.prototype.openF = function() {
