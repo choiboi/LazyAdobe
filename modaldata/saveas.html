@@ -36,7 +36,18 @@ $('#taskSaveAs').on('click', function() {
     $('#myModal').modal('hide');
     //add to actions list
     //add to back array
-    window.task.saveAsF();
-    window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
+    // window.task.saveAsF();
+    // window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
+    var taskSaveAs = new Object();
+    taskSaveAs.type = "saveAs";
+    taskSaveAs.folder = "folder";
+    taskSaveAs.filename = "filename";
+    taskSaveAs.extension = "JPG";
+    if(taskSaveAs.extension == "JPG"){
+      taskSaveAs.quality = "high";
+    } else if(taskSaveAs.extension =="PNG"){
+      taskSaveAs.interlaced = true;
+    }
+    TaskList.push(taskSaveAs);
 });
 </script>

@@ -1,35 +1,36 @@
 // Start here.
-var TaskList = function() {
-    this.tasks = new Array();
+// var TaskList = function() {
+//     this.tasks = new Array();
 
-    this.openfile = "OPEN_FILE";
-    this.save = "SAVE";
-    this.saveAs = "SAVE_AS";
-    this.resize_image = "RESIZE_IMAGE";
-    this.resize_canvas = "RESIZE_CANVAS";
-};
+//     this.openfile = "OPEN_FILE";
+//     this.save = "SAVE";
+//     this.saveAs = "SAVE_AS";
+//     this.resize_image = "RESIZE_IMAGE";
+//     this.resize_canvas = "RESIZE_CANVAS";
+// };
 
-TaskList.prototype.openF = function() {
-    this.tasks.push(this.openFile);
-};
+// TaskList.prototype.openF = function() {
+//     this.tasks.push(this.openFile);
+// };
 
-TaskList.prototype.saveF = function() {
-    this.tasks.push(this.save);
-};
+// TaskList.prototype.saveF = function() {
+//     this.tasks.push(this.save);
+// };
 
-TaskList.prototype.saveAsF = function() {
-    this.tasks.push(this.saveAs);
-};
+// TaskList.prototype.saveAsF = function() {
+//     this.tasks.push(this.saveAs);
+// };
 
-TaskList.prototype.isTaskEmpty = function() {
-    return this.tasks.length === 0;
-};
+// TaskList.prototype.isTaskEmpty = function() {
+//     return this.tasks.length === 0;
+// };
 
-TaskList.prototype.isFirstTaskOpenFile = function() {
-    return this.tasks[0] === this.openfile;
-};
+// TaskList.prototype.isFirstTaskOpenFile = function() {
+//     return this.tasks[0] === this.openfile;
+// };
 
-window.task = new TaskList();
+// window.task = new TaskList();
+var TaskList = new Array();
 
 $('#loadFileButton').on('click', function() {
     alert('load file button');
