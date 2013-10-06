@@ -46,7 +46,7 @@ overflow: hidden;
 background-color: #e5e5e5;
 }
 .bs-docs-container{
-  min-height:800px;
+  min-height:730px;
 }
 .dropdown-menu > li > span {
 display: block;
@@ -443,7 +443,6 @@ body {
     top: 20px;
     right: 0;
     padding: 15px !important;
-    width: 330px !important;
     min-height: 132px;
   }
 }
