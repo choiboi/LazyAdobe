@@ -30,5 +30,6 @@ $('#taskShowLayer').on('click', function() {
     tempTask.type = "showLayer";
     tempTask.layerName = $('#layerName').val();
     TaskList.push(tempTask);
+    refreshActionList();
 });
 </script>

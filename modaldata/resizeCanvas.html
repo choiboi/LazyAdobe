@@ -39,5 +39,6 @@ $('#taskResizeCanvas').on('click', function() {
     tempTask.width = $('#resizeWidth').val();
     tempTask.height = $('#resizeHeight').val();
     TaskList.push(tempTask);
+    refreshActionList();
 });
 </script>
