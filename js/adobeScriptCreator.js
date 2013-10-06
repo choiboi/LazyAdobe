@@ -15,11 +15,11 @@ ScriptGenerator.prototype.openFile = function() {
 ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, saveOptions) {
     if (saveAs) {
         this.script += "var p = " + this.standardDocVarName + ".path;\n";
-        this.script += "var myFolder = newFolder(p + " + newFolder + ");\n" +
+        this.script += "var myFolder = newFolder(p + '" + newFolder + "');\n" +
                             "myFolder.create();\n";
         this.script += saveOptions;
         var newPath = "/" + newFolder + "/" + newFilename;
-        this.script += this.standardDocVarName + ".saveAs(" + newPath + ", " + this.optionsName + ", true, Extension.LOWERCASE);\n";
+        this.script += this.standardDocVarName + ".saveAs('" + newPath + "', " + this.optionsName + ", true, Extension.LOWERCASE);\n";
     } else {
         this.script += this.standardDocVarName + ".save();\n";
     }
@@ -54,12 +54,12 @@ ScriptGenerator.prototype.resizeCanvas = function(width, height) {
 };
 
 ScriptGenerator.prototype.hideLayer = function(layerName) {
-    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName(" + layerName + ");\n";
+    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName('" + layerName + "');\n";
     this.script += "l.visible = false;\n";
 };
 
 ScriptGenerator.prototype.showLayer = function(layerName) {
-    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName(" + layerName + ");\n";
+    this.script += "var l = " + this.standardDocVarName + ".artLayers.getByName('" + layerName + "');\n";
     this.script += "l.visible = true;\n";
 };
 
