@@ -78,10 +78,15 @@ $('#taskSaveAs').on('click', function() {
     if(tempTask.extension == "JPG"){
       tempTask.quality = $('#quality input').val();
     } else if(tempTask.extension =="PNG"){
-      tempTask.interlaced = $('#interlaced input').val();
-      if (tempTask.interlaced !== "true") {
+      if ($('#optionsRadios1').checked) {
+        tempTask.interlaced = true;
+      } else {
         tempTask.interlaced = false;
       }
+      // tempTask.interlaced = $('#interlaced input').val();
+      // if (tempTask.interlaced !== "true") {
+      //   tempTask.interlaced = false;
+      // }
     }
     TaskList.push(tempTask);
     refreshActionList();
