@@ -34,6 +34,8 @@
           <div class="col-xs-4 col-md-3">
             <div class="bs-sidebar hidden-print affix">
               <ul class="nav bs-sidenav ">
+                <li><h3>Actions</h3></li>
+                <li class="divider"></li>
                 <li>
                   <a data-toggle="modal" href="#loadModal">Load File</a>
                 </li>
@@ -63,6 +65,9 @@
             </h2>
             <div class="bs-callout ">bs-callout</div>
             <div class="alert alert-info">alert alert-info</div>
+            <div class="scriptwrapper">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
           </div> 
       </div>
 
@@ -99,24 +104,20 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-6">
                   <div class="input-group">
                     <!-- <span class="input-group-addon">Choose File</span> -->
                     <input type="file" class="form-control" placeholder="File Path">
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <!-- Large button group -->
-                  <div class="btn-group">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                      pick file ext <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li>PSD</li>
-                      <li>JPG</li>
-                      <li>PNG</li>
-                    </ul>
-                  </div>
+                    Choose Format
+                  <select class="form-control">
+                    <option>JPG</option>
+                    <option>PNG</option>
+                    <option>PSD</option>
+                  </select>
                 </div>
               </div>
             </div>

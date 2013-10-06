@@ -3,4 +3,7 @@ $(function (){
     $(this).addClass("active");
     $(this).siblings().removeClass("active");
   });
+  $('.form-control').click(function(){
+    console.log("selected");
+  });
 });
