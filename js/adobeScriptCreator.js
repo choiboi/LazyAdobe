@@ -23,7 +23,6 @@ ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, sa
     } else {
         this.script += this.standardDocVarName + ".save();\n";
     }
-    alert(this.script);
 };
 
 ScriptGenerator.prototype.setupJPEGOptions = function(quality) {
