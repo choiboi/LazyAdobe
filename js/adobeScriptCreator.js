@@ -19,7 +19,7 @@ ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, sa
                             "myFolder.create();\n";
         this.script += saveOptions;
         var newPath = "/" + newFolder + "/" + newFilename;
-        this.script += this.standardDocVarName + ".saveAs(p + '" + newPath + "', " + this.optionsName + ", true, Extension.LOWERCASE);\n";
+        this.script += this.standardDocVarName + ".saveAs(new File(p + '" + newPath + "'), " + this.optionsName + ", true, Extension.LOWERCASE);\n";
     } else {
         this.script += this.standardDocVarName + ".save();\n";
     }
