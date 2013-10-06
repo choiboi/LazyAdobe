@@ -18,7 +18,7 @@ ScriptGenerator.prototype.saveFile = function(saveAs, newFilename, newFolder, sa
         this.script += "var myFolder = new Folder(p + '/" + newFolder + "');\n" +
                             "myFolder.create();\n";
         this.script += saveOptions;
-        var newPath = "/" + newFolder + "/" + newFilename;
+        var newPath = "p + /" + newFolder + "/" + newFilename;
         this.script += this.standardDocVarName + ".saveAs('" + newPath + "', " + this.optionsName + ", true, Extension.LOWERCASE);\n";
     } else {
         this.script += this.standardDocVarName + ".save();\n";
