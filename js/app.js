@@ -10,12 +10,13 @@ $(function (){
     e.preventDefault();
     e.stopPropagation();
   	var loadTarget = $(this).data("loadTarget");
-$this = $(this);
+    $this = $(this);
     $.ajax({
       url: "modaldata/" + loadTarget +".html",
       cache: false
     }).done(function(html){
-      $('#myModal').children('.modal-content').append(html);
+      console.log(html);
+      $('#myModal').children().children().append(html);
       $('#myModal').modal('show');
     });
     
