@@ -32,7 +32,7 @@
       </div>
       <div class="radio" id="interlaced" style="display:none">
         <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="true">
+          <input type="radio" name="optionsRadios" id="interlacedOption" value="true">
           Interlaced
         </label>
       </div>
@@ -78,7 +78,7 @@ $('#taskSaveAs').on('click', function() {
     if(tempTask.extension == "JPG"){
       tempTask.quality = $('#quality input').val();
     } else if(tempTask.extension =="PNG"){
-      if ($('#optionsRadios1').checked) {
+      if ($('#interlacedOption').checked) {
         tempTask.interlaced = true;
       } else {
         tempTask.interlaced = false;
