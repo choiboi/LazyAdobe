@@ -78,6 +78,7 @@ $('#taskSaveAs').on('click', function() {
     if(tempTask.extension == "JPG"){
       tempTask.quality = $('#quality input').val();
     } else if(tempTask.extension =="PNG"){
+      alert($('#interlacedOption').checked);
       if ($('#interlacedOption').checked) {
         tempTask.interlaced = true;
       } else {
