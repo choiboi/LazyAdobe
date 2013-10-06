@@ -30,7 +30,7 @@
 // };
 
 // window.task = new TaskList();
-var TaskList = new Array();
+TaskList = new Array();
 var tempTask = null;
 
 $('#saveButton').on('click', function() {
