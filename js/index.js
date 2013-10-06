@@ -50,8 +50,7 @@ $('#previewScriptButton').on('click', function() {
         $(this).addClass('active');
         // Generate Script.
         window.scriptCreator.openFile();
-
-        for (int i = 0; i < TaskList.length; i++) {
+        for (var i = 0; i < TaskList.length; i++) {
             var temp = TaskList[i];
             if (temp.type === "save") {
                 window.scriptCreator.saveFile(false, null, null, null);
