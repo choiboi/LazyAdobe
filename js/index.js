@@ -47,9 +47,8 @@ $('#previewScriptButton').on('click', function() {
         $(this).addClass('active');
     }
 });
-$('#saveAsButton').on('click', function() {
+$('#taskSaveAs').on('click', function() {
     alert('save as button');
-    $('#saveAsModal').modal('hide')
     window.task.saveAsF();
     window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
 });
