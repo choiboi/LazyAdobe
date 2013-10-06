@@ -51,7 +51,7 @@ padding: 5px 20px;
   display: inline;
 }
 #previewScriptButton.active:hover{
-  background-color:#428bca;
+  //background-color:#428bca;
 }
 #scriptwrapper{
   display:none;
@@ -64,8 +64,8 @@ padding: 5px 20px;
   width: 100%;
   position:relative;
   padding: 15px;
-  background-color: #3276b1;
-  border-color: #285e8e;
+background-color: #39b3d7;
+border-color: #269abc;
   border-right: 2px solid;
   border-bottom: 2px solid;
   border-radius: 2px;
@@ -73,8 +73,8 @@ padding: 5px 20px;
 #scriptwrapper .inner_foot{
   text-align: right;
 }
-a#downloadScriptButton{
-  margin: 15px 0 0 0;
+#scriptwrapper .inner_foot a{
+  margin: 15px 0 0 15px;
 }
 /*
  * Scaffolding
