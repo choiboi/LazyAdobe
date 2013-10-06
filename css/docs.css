@@ -47,10 +47,10 @@ line-height: 1.428571429;
 color: #333333;
 white-space: nowrap;
 }
-.bs-sidebar .nav > li > h3 {
+.bs-sidebar .nav > li > h3 , .bs-sidebar .nav > li > h4{
 display: block;
 margin-top: 0;
-padding: 5px 20px;
+padding: 5px 20px 0px;
 }
 .modal select.form-control{
   width: 150px;
