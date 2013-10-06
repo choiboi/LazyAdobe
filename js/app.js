@@ -25,6 +25,7 @@ $(function (){
   });
   refreshActionList = function(){
     var $actionList = $('#actionlist');
+    $actionList.children().remove();
     for(var i=0; i< TaskList.length; i++){
       var item = "<div class=\"alert alert-info\">";
       for(var propt in TaskList[i]){

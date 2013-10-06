@@ -38,6 +38,7 @@ $('#saveButton').on('click', function() {
     tempTask = new Object();
     tempTask.type = "save";
     TaskList.push(tempTask);
+    refreshActionList();
 });
 
 $('#previewScriptButton').on('click', function() {
