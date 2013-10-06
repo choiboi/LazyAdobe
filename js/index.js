@@ -57,15 +57,26 @@ var setupPSOptions = function() {
     return psOpts;
 }
 
+$('#loadFileButton').on('click', function() {
+    alert('load file button');
+    $('#loadFileModal').modal('hide')
+});
+
 $('#saveButton').on('click', function() {
     window.task.saveF();
     window.scriptCreator.saveFile(false, null);
+});
+
+$('#saveAsButton').on('click', function() {
+    alert('save as button');
+    $('#saveAsModal').modal('hide')
 });
 
 // Saves to file and allows users to save it onto their local machine.
 $('#createScriptButton').on('click', function() {
     if (window.task.isTaskEmpty()) {
         // Add appropriate model to display info.
+        alert("NO TASKS!!");
     } else {
         if (!window.task.isFirstTaskOpenFile()) {
             window.scriptCreator.openFile(false, null);
