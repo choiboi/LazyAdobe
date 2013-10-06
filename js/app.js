@@ -15,10 +15,9 @@ $(function (){
       url: "modaldata/" + loadTarget +".html",
       cache: false
     }).done(function(html){
-      $('#myModal').children().children().children().remove();
-      $('#myModal').children().children().append(html);
+      $('#myModal').children().children().remove();
+      $('#myModal').children().append(html);
       $('#myModal').modal('show');
     });
-    
   });
 });
