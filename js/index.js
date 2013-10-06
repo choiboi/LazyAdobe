@@ -42,7 +42,7 @@ $('#saveButton').on('click', function() {
 });
 
 $('#previewScriptButton').on('click', function() {
-    $('#scriptwrapper').fadeToggle(100);
+    
     if($(this).hasClass('active')){
         // Closing.
         $(this).removeClass('active');
@@ -79,7 +79,10 @@ $('#previewScriptButton').on('click', function() {
 
         var script = window.scriptCreator.getScript();
         $('#scriptPreviewText').text(script);
+        $('#scriptPreviewText').removeClass('prettyprinted');
+        prettyPrint();
     }
+    $('#scriptwrapper').fadeToggle(100);
 });
 
 // Saves to file and allows users to save it onto their local machine.
