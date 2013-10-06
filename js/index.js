@@ -34,8 +34,11 @@ var TaskList = new Array();
 var tempTask = null;
 
 $('#saveButton').on('click', function() {
-    window.task.saveF();
-    window.scriptCreator.saveFile(false, null, null, null);
+    // window.task.saveF();
+    // window.scriptCreator.saveFile(false, null, null, null);
+    tempTask = new Object();
+    tempTask.type = "save";
+    TaskList.push(tempTask);
 });
 
 $('#previewScriptButton').on('click', function() {
