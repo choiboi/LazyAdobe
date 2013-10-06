@@ -23,4 +23,14 @@ $(function (){
       $('#myModal').modal('show');
     });
   });
+  refreshActionList = function(){
+    var $actionList = $('#actionlist');
+    for(var i=0; i< TaskList.length; i++){
+      var item = "<div class=\"alert alert-info\">";
+      for(var propt in TaskList[i]){
+        item = item + propt + ":" + TaskList[i][propt] + " ";
+      }
+      $actionList.append(item);
+    }
+  }
 });
