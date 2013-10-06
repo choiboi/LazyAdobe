@@ -24,3 +24,20 @@
   <button type="button" class="btn btn-primary" id="taskResizeCanvas">Add Task</button>
 </div>
 </div><!-- /.modal-content -->
+<script>
+$('#taskResizeCanvas').on('click', function() {
+    //data validity check
+        //checks
+    //on success
+    $('#myModal').modal('hide');
+    //add to actions list
+    //add to back array
+    // window.task.saveAsF();
+    // window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
+    tempTask = new Object();
+    tempTask.type = "resizeCanvas";
+    tempTask.width = "100";
+    tempTask.height = "100";
+    TaskList.push(tempTask);
+});
+</script>

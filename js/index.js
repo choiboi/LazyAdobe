@@ -31,11 +31,7 @@
 
 // window.task = new TaskList();
 var TaskList = new Array();
-
-$('#loadFileButton').on('click', function() {
-    alert('load file button');
-    $('#loadFileModal').modal('hide')
-});
+var tempTask = null;
 
 $('#saveButton').on('click', function() {
     window.task.saveF();
@@ -49,17 +45,6 @@ $('#previewScriptButton').on('click', function() {
     }else{
         $(this).addClass('active');
     }
-});
-$('#taskSaveAs').on('click', function() {
-    alert('save as button');
-    //data validity check
-        //checks
-    //on success
-    $('#myModal').modal('hide');
-    //add to actions list
-    //add to back array
-    window.task.saveAsF();
-    window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
 });
 
 // Saves to file and allows users to save it onto their local machine.

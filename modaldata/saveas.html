@@ -38,16 +38,16 @@ $('#taskSaveAs').on('click', function() {
     //add to back array
     // window.task.saveAsF();
     // window.scriptCreator.saveFile(true, "test.jpg", "newFolder", setupJPEGOptions);
-    var taskSaveAs = new Object();
-    taskSaveAs.type = "saveAs";
-    taskSaveAs.folder = "folder";
-    taskSaveAs.filename = "filename";
-    taskSaveAs.extension = "JPG";
-    if(taskSaveAs.extension == "JPG"){
-      taskSaveAs.quality = "high";
-    } else if(taskSaveAs.extension =="PNG"){
-      taskSaveAs.interlaced = true;
+    tempTask = new Object();
+    tempTask.type = "saveAs";
+    tempTask.folder = "folder";
+    tempTask.filename = "filename";
+    tempTask.extension = "JPG";
+    if(tempTask.extension == "JPG"){
+      tempTask.quality = "high";
+    } else if(tempTask.extension =="PNG"){
+      tempTask.interlaced = true;
     }
-    TaskList.push(taskSaveAs);
+    TaskList.push(tempTask);
 });
 </script>
